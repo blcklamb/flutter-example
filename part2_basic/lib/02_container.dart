@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
+void main02() {
   runApp(MaterialApp(
     home: Scaffold(
       appBar: AppBar(
