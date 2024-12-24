@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 void main14() {
-  runApp(MaterialApp(
-    home: HomeWidget(),
-    theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.amberAccent),
-        // colorScheme: ColorScheme.dark(),
-        appBarTheme: AppBarTheme(backgroundColor: Colors.amberAccent)),
-  ));
+  runApp(MaterialApp(home: HomeWidget(), theme: customTheme));
 }
+
+final customTheme = ThemeData(
+    useMaterial3: false,
+    colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigoAccent),
+    textTheme: const TextTheme(
+        bodyMedium: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)));
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
@@ -27,12 +27,24 @@ class _HomeWidgetState extends State<HomeWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    final sameTextTheme = customTheme.textTheme;
+
     return Scaffold(
       appBar: AppBar(title: const Text('Flutter Theme')),
       body: Center(
           child: Column(
         mainAxisSize: MainAxisSize.min,
-        children: [const Text('Press Count'), Text('$count')],
+        children: [
+          Text(
+            'Press Count',
+            style: textTheme.bodyMedium,
+          ),
+          Text(
+            '$count',
+            style: textTheme.displayLarge,
+          )
+        ],
       )),
       floatingActionButton: FloatingActionButton(onPressed: () {
         setState(() {
