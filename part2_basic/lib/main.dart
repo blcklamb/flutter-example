@@ -1,5 +1,5 @@
-import 'package:flutter_application_1/10_external_library.dart';
+import 'package:flutter_application_1/11_navigator.dart';
 
 void main() {
-  main10();
+  main11();
 }
