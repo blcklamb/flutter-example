@@ -4,8 +4,9 @@ void main14() {
   runApp(MaterialApp(
     home: HomeWidget(),
     theme: ThemeData(
-      colorScheme: ColorScheme.fromSeed(seedColor: Colors.amberAccent),
-    ),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.amberAccent),
+        // colorScheme: ColorScheme.dark(),
+        appBarTheme: AppBarTheme(backgroundColor: Colors.amberAccent)),
   ));
 }
 
